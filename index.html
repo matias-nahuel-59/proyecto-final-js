@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/style.css">
     <title>Java</title>
-    </head>
+</head>
+
 <body>
 
-    <h1>Java Script</h1>
+    <nav class="nav">
+        <h1>escuelaDragon</h1>
+    </nav>
     <form class="formulario" id="formulario_agregar_alumnos">
 
-        <input type="text" placeholder="Ingrese su nombre" id="nombre_alumno" autocomplete="off"/>
-        <input type="text" placeholder="Ingrese la materia a rendir" id="materia_a_rendir" autocomplete="off"/>
-        <button type="submit">Aceptar</button>
+        <input type="text" placeholder="Ingrese su nombre" id="nombre_alumno" autocomplete="off" />
+        <input type="text" placeholder="Ingrese la materia a rendir" id="materia_a_rendir" autocomplete="off" />
+        <button type="submit" class="aceptar">Aceptar</button>
 
     </form>
 
     <table id="tabla_alumnos">
         <thead>
             <tr>
-                <th class="coral">Nombre del alumno</th>
+                <th class="th">Nombre del alumno</th>
                 <th>Materia que debe rendir</th>
             </tr>
         </thead>
@@ -28,7 +32,14 @@
         </tbody>
     </table>
 
+    <button type="submit" id="limpiarLocalStorage" class="limpiar" autocomplete="off">limpiar datos</button>
+
+
     <script src="./script.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+    <script src="sweetalert2.all.min.js"></script>
+
 
 </body>
+
 </html>
