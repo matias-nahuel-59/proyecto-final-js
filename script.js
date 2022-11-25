@@ -24,17 +24,17 @@ function renderizarTabla(alumno) {
 const lista = document.querySelector('#lista')
 
 fetch('https://swapi.dev/api/people')
-    .then( (response) => response.json() )
-    .then( (alumnosStarWars) => {
+    .then((response) => response.json())
+    .then((alumnosStarWars) => {
         const alumnoSW = alumnosStarWars.results;
         for (const persona of alumnoSW)
-        alumnoSW.forEach(() => {
-            const li = document.createElement('li')
-            li.innerHTML = `
+            alumnoSW.forEach(() => {
+                const li = document.createElement('li')
+                li.innerHTML = `
                 <h4>${persona.name}</h4>
             `
-            lista.append(li)
-        })
+                lista.append(li)
+            })
     })
 
 let alumnos = [];
@@ -76,5 +76,3 @@ botonLimpiar.addEventListener("click", () => {
     location.reload();
     localStorage.clear();
 })
-
-
