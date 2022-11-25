@@ -1,16 +1,3 @@
-const { default: Swal } = require("sweetalert2");
-
-const dateTime = Swal.dataTime
-
-Swal.fire({
-    title: 'Hola alumno!',
-    text: 'al completar este simple formulario son estaras enviando tu nombre y la materia que nesecitas rendir, para luego informarte en que fechas podras rendir',
-    icon: 'info',
-    confirmButtonText: 'aceptar'
-})
-
-
-
 function renderizarTabla(alumno) {
     const bodyTabla = document.getElementById("body_alumnos");
 
@@ -33,6 +20,22 @@ function renderizarTabla(alumno) {
         bodyTabla.append(tr);
     }
 };
+
+const lista = document.querySelector('#lista')
+
+fetch('https://swapi.dev/api/people')
+    .then( (response) => response.json() )
+    .then( (alumnosStarWars) => {
+        const alumnoSW = alumnosStarWars.results;
+        for (const persona of alumnoSW)
+        alumnoSW.forEach(() => {
+            const li = document.createElement('li')
+            li.innerHTML = `
+                <h4>${persona.name}</h4>
+            `
+            lista.append(li)
+        })
+    })
 
 let alumnos = [];
 
